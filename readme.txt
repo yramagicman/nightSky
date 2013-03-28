@@ -1,0 +1,1 @@
+Install this theme and use it! There shouldn't be any issues with any plugins or anything like that. If there are, then submit an issue on Github (https://github.com/yramagicman/nightSky/issues)  and I'll get to it ASAP.
