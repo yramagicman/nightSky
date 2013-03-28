@@ -1,0 +1,405 @@
+/*
+Theme Name: night sky
+Theme URI: 
+Description: Image credit to <a href="http://www.flickr.com/photos/nattu/3392855180/"> this guy</a> on flikr
+Version: 1
+Author: Jonathan
+Author URI: http://www.perpetuallycreative.com/web
+Tags: blue, light, dark, two-columns, one-column, custom-colors, custom-header, full-width-template, theme-options, fixed-width
+License: GPL
+License URI:http://www.gnu.org/licenses/gpl.html
+
+Copyright 2013, Jonathan Gilson
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
+
+/* reset tags*/
+html {
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin: 0;
+	padding: 0;
+	font: 90% Helvetica, Arial, Geneva, sans-serif;
+	color: #f5f5f5;
+  background: #000 url(images/bodyBg.jpg) repeat-x center top;
+}
+div.menu *,
+#header *,
+#sidebar *,
+#footer * {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+html,
+body {
+	height: 100%;
+}
+body > #container {
+	height: auto;
+	min-height: 100%;
+}
+/* define major tags*/
+hr {
+	border: 1px solid #c7c7c7;
+	color: #c7c7c7;
+	background-color: #c7c7c7;
+}
+fieldset {
+	border: none;
+}
+textarea, input {
+	background: #333;
+	color: #fff;
+	border: 1px solid #999;
+	display: block;
+}
+:focus {
+	outline: 0;
+}
+a {
+	color: #fff;
+	display: inline;
+}
+h2 a {
+	color: #fff;
+	text-decoration: none;
+	text-transform: capitalize;
+}
+a:hover {
+	text-decoration: none;
+	color: #c8c8c8;
+}
+blockquote {
+	margin: 10px auto 10px 15px;
+}
+/*major formatting*/
+#container {
+	margin: auto;
+	padding: 0;
+	position: relative;
+	width: 940px;
+	border: 1px solid #333;
+  background: url(images/border.png) repeat-y 720px top;
+}
+#content {
+	clear: both;
+	margin: 0 auto;
+	width: 940px;
+	background: url(images/reflect.jpg) no-repeat center top;
+}
+#body {
+	width: 700px;
+	float: left;
+	padding: 10px 10px 30px;
+	overflow: hidden;
+	border-right: 1px solid #333;
+}
+#header {
+	overflow: hidden;
+	height: 249px;
+	margin: 0px;
+	width: 940px;
+	font: Arial, Helvetica, Geneva, sans-serif;
+	color: #fff;
+	background: url(images/header.jpg) no-repeat center center;
+	text-align: right;
+}
+#header #blogTitle {
+	margin: 20px;
+	text-transform: capitalize;
+	font-weight: normal;
+}
+#header #tagLine {
+	font-weight: normal;
+	font-size: 16pt;
+	margin: 0 20px;
+}
+#header #blogTitle a {
+	text-decoration: none;
+	color: #fff;
+}
+#header #blogTitle a:hover {
+	text-decoration: none;
+	color: #ccc;
+}
+#nav div.menu {
+	position: absolute;
+	top: 215px;
+	text-align: center;
+	width: 940px;
+	border-bottom: 1px solid #666;
+	background: url(images/navbg.png);
+	line-height: 26px;
+}
+#nav ul {
+	float: left;
+	margin-left: 5px;
+}
+#nav a {
+	text-decoration: none;
+	color: #fff;
+	border: 1px solid #666;
+	background: #000;
+	overflow: hidden;
+	margin: 0 2px;
+	margin-bottom: -1px;
+	padding: 3px 10px;
+	display: block;
+	float: left;
+}
+#nav a:hover, #nav .current-menu-item a, #nav .current_page_item a {
+	border-bottom-color: #000;
+	background: url(images/navbg.png);
+}
+#nav a:hover{
+  color:#ccc;
+}
+#nav li {
+	margin: 0;
+	padding:0;
+	display:inline;
+	position: relative;
+	float: left;
+}
+/* must come first*/
+#nav ul.sub-menu,
+#nav ul.children {
+	position: absolute;
+	top:33px;
+	visibility:hidden;
+	border:1px solid #333;
+	margin:0;
+	width:150px;
+	z-index:5000;
+}
+/*show 1st level*/
+#nav li:hover ul.sub-menu,
+#nav li:hover ul.children,
+#nav li.sfhover ul.children,
+#nav li.sfhover ul.children {
+	visibility: visible;
+}
+/*must be after hover for 1st level otherwise both menus show on hover. */
+#nav ul.sub-menu ul.sub-menu,
+#nav ul.children ul.children {
+	position: absolute;
+	left:150px;
+	top:-1px;
+	display: none;
+	border:1px solid #333;
+	margin:0;
+	width:150px;
+}
+/*show 2nd level */
+#nav ul.sub-menu li:hover ul.sub-menu,
+#nav ul.sub-menu li.sfhover ul.sub-menu,
+#nav ul.children li:hover ul.sub-menu,
+#nav ul.children li.sfhover ul.children {
+	visibility: visible;
+	display:block;
+}
+#nav ul.sub-menu a,
+#nav ul.sub-menu ul.sub-menu a,
+#nav ul.children a,
+#nav ul.children ul.children a {
+	margin:0;
+	padding:0 10px;
+	border:none;
+	display: block;
+	width:130px;
+	text-align: left;
+  background:black;
+}
+#nav ul.sub-menu a:hover,
+#nav ul.sub-menu ul.sub-menu a:hover,
+#nav ul.children a:hover,
+#nav ul.children ul.children a:hover {
+  background: #222222;
+  color:#fff;
+}
+#sidebar {
+	width: 200px;
+  overflow: hidden;
+	float: right;
+	color: #fff;
+/*  text-align: r;*/
+	border-left: 1px solid #333;
+}
+#searchform {
+	clear: both;
+	display: block;
+  overflow:hidden;
+/*  margin: 20px 8px 30px;*/
+}
+#sidebar #searchform .submitbutton {
+	float: right;
+	clear: right;
+  margin: 3px 0;
+	width: 50px;
+	height: 24px;
+	overflow: hidden;
+	background: #333;
+	border: 1px solid #666;
+	color: #fff;
+	cursor: pointer;
+}
+#sidebar #searchform #searchbox {
+	margin: 10px 0;
+	padding: 5px;
+	width: 120px;
+	float: left;
+	background: #333;
+	border: 1px solid #666;
+	color: #fff;
+}
+#sidebar p, #sidebar .rssSummary {
+	display: block;
+	clear: both;
+	margin: .5em;
+	text-align: left;
+  padding:0.25em;
+}
+#sidebar h2 {
+	font-size: 14pt;
+	padding: 5px;
+	border-bottom: 1px solid #999;
+	margin-top: 20px;
+}
+#sidebar #search h3 {
+	border: none;
+	margin: auto;
+}
+#sidebar ul li {
+	border: none;
+}
+#sidebar  li {
+	line-height: 1.5;
+	display: block;
+}
+#sidebar a {
+	margin: 0;
+	padding-left: 20px;
+	line-height: 2.5;
+	display: block;
+	overflow: hidden;
+}
+#sidebar a:hover {
+	background: #222;
+	color: #FFF;
+	margin-top: -1px;
+	margin-bottom: -1px;
+	border-top: 1px dotted #666;
+	border-bottom: 1px dotted #666;
+}
+#sidebar .tagcloud a, #sidebar #calendar_wrap a{
+  display:inline !important;
+  padding: 2px !important;
+}
+#footer {
+	clear: both;
+	overflow: hidden;
+	vertical-align: middle;
+	border-top: 1px solid #333;
+	background-color: #000;
+}
+#footer a {
+	border-bottom: 1px dotted #999;
+}
+#footer #footRss {
+	float: right;
+	text-align: right;
+	width: 170px;
+	padding: 10px 16px 30px;
+	height: 20px;
+}
+#footer #presenting {
+	height: 20px;
+	padding: 20px;
+	float: left;
+}
+.comments{
+  clear:both;
+}
+/* end major formatting*/
+.alignright{
+  float: right;
+}
+.alignleft{
+  float:left;
+}
+.aligncenter{
+  display:block;
+  margin:auto;
+  clear:both;
+}
+img{
+  margin:0.5em;
+  padding:0;
+  max-width:100%;
+}
+.wp-caption{
+  border:1px solid #333;
+  padding: 10px;
+  background:#222;
+    max-width:100%;
+}
+.wp-caption img{
+  margin:auto;
+  display:block;
+    max-width:100%;
+}
+.wp-caption-text{
+  margin-top: 0.25em;
+  padding-left:1.25em;
+  display:block;
+  overflow:hidden;
+}
+/*Recent comments wideget*/
+#sidebar .recentcomments{
+    padding-left:20px;
+}
+/*Calendar widget*/
+#sidebar .widget_calendar{
+    padding-left:20px;
+    margin-top:10px;
+}
+#sidebar #calendar_wrap{
+    margin-top:10px;
+}
+#sidebar .widget_calendar caption{
+    font-weight:bold;
+    text-transform: uppercase;
+    letter-spacing:1px;
+    font-size:110%;
+}
+#sidebar .widget_calendar a{
+    font-weight:bold;
+    color:#ccc;
+    border-bottom: 1px dotted #666;
+    background:#222;
+}
+#sidebar .widget_calendar a:hover{
+    color:#fff;
+}
+.gallery-caption{
+  margin:0;
+  padding:0;
+}
+.sticky, .bypostauthor{
+  color:inherit;
+}
