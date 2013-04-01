@@ -29,9 +29,6 @@ function wpHTML5_title( ) {
     echo " search results: ";
     echo esc_html( $s );
   } //is_search()
-  else {
-    wp_title( '', true );
-  }
 }
 
 // add home page to page_menu function.
