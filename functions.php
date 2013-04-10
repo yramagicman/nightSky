@@ -53,19 +53,19 @@ require_once( 'inc/scripts-styles.php' ); // if you remove this line your blog w
 // require_once( 'inc/wpcom.php' );
 // Do you have an additional CSS directory? (Not web fonts, those are defined below.)
 
-function wpHTML5_user_scripts( ) {
+function nightsky_user_scripts( ) {
     // enque your own stuff here. CSS should be added to the array above.
     // enqueue a script.
     // wp_enqueue_script( 'id', get_template_directory_uri() . 'path',array('dependencies'), filemtime(get_stylesheet_directory() . 'path'), header_or_footer );
 }
 // customize the end of the excerpt.
-function wpHTML5_excerpt_more( $more ) {
+function nightsky_excerpt_more( $more ) {
     global $post;
     return ' <p class="readmore"><a href="' . get_permalink( $post->ID ) . '">Continue reading ' . $post->post_title . '</a></p>';
 }
 
 // Widgitize sidebars.
-function wpHTML5_sidebars( ) {
+function nightsky_sidebars( ) {
     if ( function_exists( 'register_sidebar' ) ) {
         // duplicate this array and edit it if you have more than one widgitable area in your theme
         register_sidebar( array(
@@ -80,11 +80,11 @@ function wpHTML5_sidebars( ) {
 
 // tell WordPress about custom Nav Menus.
 register_nav_menus( array(
-     'header' => __( 'Header Navigation', 'wordpressHTML5' ),
-    // 'footer' => __( 'Footer Navigation', 'wordpressHTML5' ) 
+     'header' => __( 'Header Navigation', 'nightsky' ),
+    // 'footer' => __( 'Footer Navigation', 'nightsky' ) 
 ) );
 
-function wpHTML5_header_menu( ) {
+function nightsky_header_menu( ) {
     $header = array(
          'theme_location' => 'header',
         'container' => 'div',
@@ -95,7 +95,7 @@ function wpHTML5_header_menu( ) {
     wp_nav_menu( $header );
 }
 
-function wpHTML5_single_post_nav( ) {
+function nightsky_single_post_nav( ) {
     $prev_post = get_previous_post();
     if ( !empty( $prev_post ) ) {
 ?>
@@ -118,10 +118,59 @@ function wpHTML5_single_post_nav( ) {
     } //!empty( $next_post )
 }
 
-// Support for RSS
-add_theme_support( 'automatic-feed-links' );
-// Post thumbnails
-add_theme_support( 'post-thumbnails' );
+
+
 // make TinyMCE look good.
 add_editor_style();
+function nightsky_init( ) {
+  if ( clean_head ) { // remove RSD link
+    remove_action( 'wp_head', 'rsd_link' );
+    // windows live writer
+    remove_action( 'wp_head', 'wlwmanifest_link' );
+    // index link
+    remove_action( 'wp_head', 'index_rel_link' );
+    // previous link
+    remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
+    // start link
+    remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
+    // links for adjacent posts
+    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+    // Remove meta generator
+    remove_action( 'wp_head', 'wp_generator' );
+  } //clean_head
+  if ( no_recent_comments_style ) {
+    // remove recent comments style
+    add_action( 'widgets_init', 'nightsky_remove_recent_comments_style' );
+  } //no_recent_comments_style
+  // initilize sidebars
+  add_action( 'widgets_init', 'nightsky_sidebars' );
+  // initilize styles and scripts
+  add_action( 'wp_enqueue_scripts', 'nightsky_styles_and_scripts' );
+  // user added scripts and styles
+  add_action( 'wp_enqueue_scripts', 'nightsky_user_scripts' );
+  //  change the end of the excerpt.
+  add_filter( 'excerpt_more', 'nightsky_excerpt_more' );
+  // Add Home page to page_menu() fallback function
+  add_filter( 'wp_page_menu_args', 'nightsky_page_menu_args' );
+  // pretty title
+  add_filter( 'wp_title', 'nightsky_title' );
+  //kill default gallery styles
+  if ( kill_gallery_styles ) {
+    add_filter( 'use_default_gallery_style', '__return_false' );
+  } //kill_gallery_styles
+  //   split sidebar
+  if ( js_sidebar_split ) {
+    add_filter( 'wp_footer', 'nightsky_split_sidebar' );
+  } //js_sidebar_split
+  if ( custom_excerpt_length ) {
+    remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
+    add_filter( 'get_the_excerpt', 'nightsky_custom_wp_trim_excerpt' );
+  } //custom_excerpt_length
+  if ( web_fonts ) {
+    add_filter( 'wp_head', 'nightsky_webfonts' );
+  } //web_fonts
+  add_theme_support( 'post-thumbnails' );
+  add_theme_support( 'automatic-feed-links' );
+}
+add_action( 'after_setup_theme', 'nightsky_init' );
 ?>

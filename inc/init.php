@@ -1,6 +1,6 @@
 <?php
 // Remove recent comments styles from head
-function wpHTML5_remove_recent_comments_style( ) {
+function nightsky_remove_recent_comments_style( ) {
   global $wp_widget_factory;
   remove_action( 'wp_head', array(
      $wp_widget_factory->widgets[ 'WP_Widget_Recent_Comments' ],
@@ -8,7 +8,7 @@ function wpHTML5_remove_recent_comments_style( ) {
   ) );
 }
 // Make the title look cool 
-function wpHTML5_title( ) {
+function nightsky_title( ) {
   if ( is_home() ) {
     bloginfo( 'name' );
     echo " - ";
@@ -32,12 +32,12 @@ function wpHTML5_title( ) {
 }
 
 // add home page to page_menu function.
-function wpHTML5_page_menu_args( $args ) {
+function nightsky_page_menu_args( $args ) {
   $args[ 'show_home' ] = true;
   return $args;
 }
 
-function wpHTML5_split_sidebar( ) {
+function nightsky_split_sidebar( ) {
 ?>
   
   <script type="text/javascript">
@@ -60,7 +60,7 @@ function wpHTML5_split_sidebar( ) {
   <?php
 }
 
-function wpHTML5_custom_wp_trim_excerpt( $text ) {
+function nightsky_custom_wp_trim_excerpt( $text ) {
   $raw_excerpt = $text;
   $text        = get_the_content( '' );
   $text        = strip_shortcodes( $text );
@@ -101,57 +101,4 @@ function wpHTML5_custom_wp_trim_excerpt( $text ) {
 //     'link' 
 //   ) );
 // } //post_formats
-
-
-function wpHTML5_init( ) {
-  if ( clean_head ) { // remove RSD link
-    remove_action( 'wp_head', 'rsd_link' );
-    // windows live writer
-    remove_action( 'wp_head', 'wlwmanifest_link' );
-    // index link
-    remove_action( 'wp_head', 'index_rel_link' );
-    // previous link
-    remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
-    // start link
-    remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
-    // links for adjacent posts
-    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
-    // Remove meta generator
-    remove_action( 'wp_head', 'wp_generator' );
-  } //clean_head
-  if ( no_recent_comments_style ) {
-    // remove recent comments style
-    add_action( 'widgets_init', 'wpHTML5_remove_recent_comments_style' );
-  } //no_recent_comments_style
-  // initilize sidebars
-  add_action( 'widgets_init', 'wpHTML5_sidebars' );
-  // initilize styles and scripts
-  add_action( 'wp_enqueue_scripts', 'wpHTML5_styles_and_scripts' );
-  // user added scripts and styles
-  add_action( 'wp_enqueue_scripts', 'wpHTML5_user_scripts' );
-  //  change the end of the excerpt.
-  add_filter( 'excerpt_more', 'wpHTML5_excerpt_more' );
-  // Add Home page to page_menu() fallback function
-  add_filter( 'wp_page_menu_args', 'wpHTML5_page_menu_args' );
-  // pretty title
-  add_filter( 'wp_title', 'wpHTML5_title' );
-  //kill default gallery styles
-  if ( kill_gallery_styles ) {
-    add_filter( 'use_default_gallery_style', '__return_false' );
-  } //kill_gallery_styles
-  //   split sidebar
-  if ( js_sidebar_split ) {
-    add_filter( 'wp_footer', 'wpHTML5_split_sidebar' );
-  } //js_sidebar_split
-  if ( custom_excerpt_length ) {
-    remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
-    add_filter( 'get_the_excerpt', 'wpHTML5_custom_wp_trim_excerpt' );
-  } //custom_excerpt_length
-  if ( web_fonts ) {
-    add_filter( 'wp_head', 'wpHTML5_webfonts' );
-  } //web_fonts
-  
-}
-add_action( 'after_setup_theme', 'wpHTML5_init' );
-
 ?>

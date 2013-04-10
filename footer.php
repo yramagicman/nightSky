@@ -9,10 +9,11 @@
         <!-- Don't delete this. It credits the dude who took the header photo. -->
         Image credit to <a href="http://www.flickr.com/photos/nattu/3392855180/"> this guy</a> on flikr
       </div>
-      <!-- <?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds. --> <?php wp_footer(); ?>
+      <!-- <?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds. --> 
       </p>
     </div>
   </div>
 </div>
+<?php wp_footer(); ?>
 </body>
 </html>

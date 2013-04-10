@@ -4,17 +4,9 @@
 <head>
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>"  />
 <title>
-<?php if (is_home () ) { bloginfo('name'); echo " - "; bloginfo('description'); 
-} elseif (is_category() ) {single_cat_title(); echo " - "; bloginfo('name');
-} elseif (is_single() || is_page() ) {single_post_title(); echo " - "; bloginfo('name');
-} elseif (is_search() ) {bloginfo('name'); echo " search results: "; echo esc_html($s);
-} else { wp_title('',true); }?>
+  <?php wp_title();?>
 </title>
-<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
-<meta name="robots" content="follow, all" />
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
-<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+
 <script type="text/javascript"><!--//--><![CDATA[//><!--
 sfHover = function() {
 	if (!document.getElementsByTagName) return false;
@@ -40,7 +32,7 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
 <div id="container">
   <div id="header">
     <div id="head-text">
-      <h1 id="blogTitle"><a href="<?php echo home_url() ; ?>">
+      <h1 id="blogTitle"><a href="<?php echo esc_attr(home_url()); ?>">
         <?php bloginfo('name'); ?>
         </a></h1>
       <!--blog name and link to home page-->
@@ -52,5 +44,5 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
     </div>
   </div>
   <div id="nav">
- <?php wpHTML5_header_menu( ); ?>
+ <?php nightsky_header_menu( ); ?>
 </div>

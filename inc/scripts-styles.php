@@ -1,5 +1,5 @@
 <?php
-function wpHTML5_styles_and_scripts( ) {
+function nightsky_styles_and_scripts( ) {
     
     if ( is_singular() AND comments_open() AND ( get_option( 'thread_comments' ) == 1 ) ) {
         wp_enqueue_script( 'comment-reply' );
@@ -31,7 +31,7 @@ function wpHTML5_styles_and_scripts( ) {
     // if minification is on, minify styles via php script, othwise output non-minified CSS
     if ( minify_styles ) {
         if ( additional_css ) {
-            wpHTML5_enqueue_css();
+            nightsky_enqueue_css();
         } //additional_css
         else {
             wp_enqueue_style( 'wordpressHTML5-style', get_template_directory_uri() . '/inc/minified.php', __FILE__, filemtime( get_stylesheet_directory() . '/style.css' ), 'all' );
@@ -39,7 +39,7 @@ function wpHTML5_styles_and_scripts( ) {
     } //minify_styles
     else {
         if ( additional_css ) {
-            wpHTML5_enqueue_css();
+            nightsky_enqueue_css();
         } //additional_css
         else {
             wp_enqueue_style( 'wordpressHTML5-style', get_stylesheet_uri(), __FILE__, filemtime( get_stylesheet_directory() . '/style.css' ), 'all' );
@@ -47,7 +47,7 @@ function wpHTML5_styles_and_scripts( ) {
     }
 }
 
-function wpHTML5_enqueue_css( ) {
+function nightsky_enqueue_css( ) {
     $my_theme = wp_get_theme();
     wp_enqueue_style( 'wordpressHTML5-style', get_stylesheet_uri(), __FILE__, filemtime( get_stylesheet_directory() . '/style.css' ), 'all' );
     global $styles; // access stylesheet array
@@ -59,7 +59,7 @@ function wpHTML5_enqueue_css( ) {
     } //$styles as $value
 }
 
-function wpHTML5_webfonts( ) {
+function nightsky_webfonts( ) {
 ?>
   <script type="text/javascript"> 
     fbg.hideFOUT('asap');
