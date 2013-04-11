@@ -6,14 +6,13 @@
       </div>
       <div id="footRss">
         <a href="<?php bloginfo('rss2_url'); ?>">Entries (RSS)</a> and <a href="<?php bloginfo('comments_rss2_url'); ?>">Comments (RSS)</a>. 
-        <!-- Don't delete this. It credits the dude who took the header photo. -->
-        Image credit to <a href="http://www.flickr.com/photos/nattu/3392855180/"> this guy</a> on flikr
       </div>
       <!-- <?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds. --> 
       </p>
     </div>
   </div>
 </div>
+<!-- Header image from http://www.flickr.com/photos/73003003@N07/7004197882/. Lisenced CC-0. It appears in http://www.flickr.com/groups/freeuse/. The Group Info states that no attribution is required. -->
 <?php wp_footer(); ?>
 </body>
 </html>
