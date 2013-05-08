@@ -1,8 +1,8 @@
 /*
 Theme Name: Night Sky
-Theme URI: https://github.com/yramagicman/nightSky/issues 
+Theme URI: https://github.com/yramagicman/nightSky/issues
 Description: A dark themme with a pretty header.
-Version: 1.2
+Version: 1.3
 Author: Jonathan
 Author URI: http://www.perpetuallycreative.com/web
 Tags: black, dark, two-columns, fixed-width
@@ -26,203 +26,203 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
 /* reset tags*/
 html {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 body {
-	margin: 0;
-	padding: 0;
-	font: 90% Helvetica, Arial, Geneva, sans-serif;
-	color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    font: 90% Helvetica, Arial, Geneva, sans-serif;
+    color: #f5f5f5;
   background: #000 url(images/bodyBg.jpg) repeat-x center top;
 }
 div.menu *,
 #header *,
 #sidebar *,
 #footer * {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
 }
 html,
 body {
-	height: 100%;
+    height: 100%;
 }
 body > #container {
-	height: auto;
-	min-height: 100%;
+    height: auto;
+    min-height: 100%;
 }
 /* define major tags*/
 hr {
-	border: 1px solid #c7c7c7;
-	color: #c7c7c7;
-	background-color: #c7c7c7;
+    border: 1px solid #c7c7c7;
+    color: #c7c7c7;
+    background-color: #c7c7c7;
 }
 fieldset {
-	border: none;
+    border: none;
 }
 textarea, input {
-	background: #333;
-	color: #fff;
-	border: 1px solid #999;
-	display: block;
+    background: #333;
+    color: #fff;
+    border: 1px solid #999;
+    display: block;
 }
 :focus {
-	outline: 0;
+    outline: 0;
 }
 a {
-	color: #fff;
-	display: inline;
+    color: #fff;
+    display: inline;
 }
 h2 a {
-	color: #fff;
-	text-decoration: none;
-	text-transform: capitalize;
+    color: #fff;
+    text-decoration: none;
+    text-transform: capitalize;
 }
 a:hover {
-	text-decoration: none;
-	color: #c8c8c8;
+    text-decoration: none;
+    color: #c8c8c8;
 }
 blockquote {
-	margin: 10px auto 10px 15px;
+    margin: 10px auto 10px 15px;
 }
 /*major formatting*/
 #container {
-	margin: auto;
-	padding: 0;
-	position: relative;
-	width: 940px;
-	border: 1px solid #333;
+    margin: auto;
+    padding: 0;
+    position: relative;
+    width: 940px;
+    border: 1px solid #333;
   background: url(images/border.png) repeat-y 720px top;
 }
 #content {
-	clear: both;
-	margin: 0 auto;
-	width: 940px;
-	background: url(images/reflect.jpg) no-repeat center top;
+    clear: both;
+    margin: 0 auto;
+    width: 940px;
+    background: url(images/reflect.jpg) no-repeat center top;
 }
 #body {
-	width: 700px;
-	float: left;
-	padding: 10px 10px 30px;
-	overflow: hidden;
-	border-right: 1px solid #333;
+    width: 700px;
+    float: left;
+    padding: 10px 10px 30px;
+    overflow: hidden;
+    border-right: 1px solid #333;
 }
 #header {
-	overflow: hidden;
-	height: 249px;
-	margin: 0px;
-	width: 940px;
-	font: Arial, Helvetica, Geneva, sans-serif;
-	color: #fff;
-	background: url(images/header.jpg) no-repeat center center;
-	text-align: left;
+    overflow: hidden;
+    height: 249px;
+    margin: 0px;
+    width: 940px;
+    font: Arial, Helvetica, Geneva, sans-serif;
+    color: #fff;
+    background: url(images/header.jpg) no-repeat center center;
+    text-align: left;
 }
 #header #blogTitle {
-	margin: 20px;
-	text-transform: capitalize;
-	font-weight: normal;
+    margin: 20px;
+    text-transform: capitalize;
+    font-weight: normal;
 }
 #header #tagLine {
-	font-weight: normal;
-	font-size: 16pt;
-	margin: 0 20px;
+    font-weight: normal;
+    font-size: 16pt;
+    margin: 0 20px;
 }
 #header #blogTitle a {
-	text-decoration: none;
-	color: #fff;
+    text-decoration: none;
+    color: #fff;
 }
 #header #blogTitle a:hover {
-	text-decoration: none;
-	color: #ccc;
+    text-decoration: none;
+    color: #ccc;
 }
 #nav div.menu {
-	position: absolute;
-	top: 215px;
-	text-align: center;
-	width: 940px;
-	border-bottom: 1px solid #666;
-	background: url(images/navbg.png);
-	line-height: 26px;
+    position: absolute;
+    top: 215px;
+    text-align: center;
+    width: 940px;
+    border-bottom: 1px solid #666;
+    background: url(images/navbg.png);
+    line-height: 26px;
 }
 #nav ul {
-	float: left;
-	margin-left: 5px;
+    float: left;
+    margin-left: 5px;
 }
 #nav a {
-	text-decoration: none;
-	color: #fff;
-	border: 1px solid #666;
-	background: #000;
-	overflow: hidden;
-	margin: 0 2px;
-	margin-bottom: -1px;
-	padding: 3px 10px;
-	display: block;
-	float: left;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #666;
+    background: #000;
+    overflow: hidden;
+    margin: 0 2px;
+    margin-bottom: -1px;
+    padding: 3px 10px;
+    display: block;
+    float: left;
 }
 #nav a:hover, #nav .current-menu-item a, #nav .current_page_item a {
-	border-bottom-color: #000;
-	background: url(images/navbg.png);
+    border-bottom-color: #000;
+    background: url(images/navbg.png);
 }
 #nav a:hover{
   color:#ccc;
 }
 #nav li {
-	margin: 0;
-	padding:0;
-	display:inline;
-	position: relative;
-	float: left;
+    margin: 0;
+    padding:0;
+    display:inline;
+    position: relative;
+    float: left;
 }
 /* must come first*/
 #nav ul.sub-menu,
 #nav ul.children {
-	position: absolute;
-	top:33px;
-	visibility:hidden;
-	border:1px solid #333;
-	margin:0;
-	width:150px;
-	z-index:5000;
+    position: absolute;
+    top:33px;
+    visibility:hidden;
+    border:1px solid #333;
+    margin:0;
+    width:150px;
+    z-index:5000;
 }
 /*show 1st level*/
 #nav li:hover ul.sub-menu,
 #nav li:hover ul.children,
 #nav li.sfhover ul.children,
 #nav li.sfhover ul.children {
-	visibility: visible;
+    visibility: visible;
 }
 /*must be after hover for 1st level otherwise both menus show on hover. */
 #nav ul.sub-menu ul.sub-menu,
 #nav ul.children ul.children {
-	position: absolute;
-	left:150px;
-	top:-1px;
-	display: none;
-	border:1px solid #333;
-	margin:0;
-	width:150px;
+    position: absolute;
+    left:150px;
+    top:-1px;
+    display: none;
+    border:1px solid #333;
+    margin:0;
+    width:150px;
 }
 /*show 2nd level */
 #nav ul.sub-menu li:hover ul.sub-menu,
 #nav ul.sub-menu li.sfhover ul.sub-menu,
 #nav ul.children li:hover ul.sub-menu,
 #nav ul.children li.sfhover ul.children {
-	visibility: visible;
-	display:block;
+    visibility: visible;
+    display:block;
 }
 #nav ul.sub-menu a,
 #nav ul.sub-menu ul.sub-menu a,
 #nav ul.children a,
 #nav ul.children ul.children a {
-	margin:0;
-	padding:0 10px;
-	border:none;
-	display: block;
-	width:130px;
-	text-align: left;
+    margin:0;
+    padding:0 10px;
+    border:none;
+    display: block;
+    width:130px;
+    text-align: left;
   background:black;
 }
 #nav ul.sub-menu a:hover,
@@ -233,104 +233,104 @@ blockquote {
   color:#fff;
 }
 #sidebar {
-	width: 200px;
+    width: 200px;
   overflow: hidden;
-	float: right;
-	color: #fff;
+    float: right;
+    color: #fff;
 /*  text-align: r;*/
-	border-left: 1px solid #333;
+    border-left: 1px solid #333;
 }
 #searchform {
-	clear: both;
-	display: block;
+    clear: both;
+    display: block;
   overflow:hidden;
 /*  margin: 20px 8px 30px;*/
 }
 #sidebar #searchform .submitbutton {
-	float: right;
-	clear: right;
+    float: right;
+    clear: right;
   margin: 3px 0;
-	width: 50px;
-	height: 24px;
-	overflow: hidden;
-	background: #333;
-	border: 1px solid #666;
-	color: #fff;
-	cursor: pointer;
+    width: 50px;
+    height: 24px;
+    overflow: hidden;
+    background: #333;
+    border: 1px solid #666;
+    color: #fff;
+    cursor: pointer;
 }
 #sidebar #searchform #searchbox {
-	margin: 10px 0;
-	padding: 5px;
-	width: 120px;
-	float: left;
-	background: #333;
-	border: 1px solid #666;
-	color: #fff;
+    margin: 10px 0;
+    padding: 5px;
+    width: 120px;
+    float: left;
+    background: #333;
+    border: 1px solid #666;
+    color: #fff;
 }
 #sidebar p, #sidebar .rssSummary {
-	display: block;
-	clear: both;
-	margin: .5em;
-	text-align: left;
+    display: block;
+    clear: both;
+    margin: .5em;
+    text-align: left;
   padding:0.25em;
 }
 #sidebar h2 {
-	font-size: 14pt;
-	padding: 5px;
-	border-bottom: 1px solid #999;
-	margin-top: 20px;
+    font-size: 14pt;
+    padding: 5px;
+    border-bottom: 1px solid #999;
+    margin-top: 20px;
 }
 #sidebar #search h3 {
-	border: none;
-	margin: auto;
+    border: none;
+    margin: auto;
 }
 #sidebar ul li {
-	border: none;
+    border: none;
 }
 #sidebar  li {
-	line-height: 1.5;
-	display: block;
+    line-height: 1.5;
+    display: block;
 }
 #sidebar a {
-	margin: 0;
-	padding-left: 20px;
-	line-height: 2.5;
-	display: block;
-	overflow: hidden;
+    margin: 0;
+    padding-left: 20px;
+    line-height: 2.5;
+    display: block;
+    overflow: hidden;
 }
 #sidebar a:hover {
-	background: #222;
-	color: #FFF;
-	margin-top: -1px;
-	margin-bottom: -1px;
-	border-top: 1px dotted #666;
-	border-bottom: 1px dotted #666;
+    background: #222;
+    color: #FFF;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    border-top: 1px dotted #666;
+    border-bottom: 1px dotted #666;
 }
 #sidebar .tagcloud a, #sidebar #calendar_wrap a{
   display:inline !important;
   padding: 2px !important;
 }
 #footer {
-	clear: both;
-	overflow: hidden;
-	vertical-align: middle;
-	border-top: 1px solid #333;
-	background-color: #000;
+    clear: both;
+    overflow: hidden;
+    vertical-align: middle;
+    border-top: 1px solid #333;
+    background-color: #000;
 }
 #footer a {
-	border-bottom: 1px dotted #999;
+    border-bottom: 1px dotted #999;
 }
 #footer #footRss {
-	float: right;
-	text-align: right;
-	width: 170px;
-	padding: 10px 16px 30px;
-	height: 20px;
+    float: right;
+    text-align: right;
+    width: 170px;
+    padding: 10px 16px 30px;
+    height: 20px;
 }
 #footer #presenting {
-	height: 20px;
-	padding: 20px;
-	float: left;
+    height: 20px;
+    padding: 20px;
+    float: left;
 }
 .comments{
   clear:both;
