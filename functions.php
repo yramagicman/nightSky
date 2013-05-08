@@ -8,13 +8,13 @@ define( 'additional_css', false );
 
 // Where? What CSS do you need to include?
 $styles = array(
-     '/additional/Styles.css' 
+     '/additional/Styles.css'
 );
 // use web fonts?
 define( 'web_fonts', false );
 // if using web fonts, where are they?
 // $fonts = array(
-//      'http://fonts.googleapis.com/css?family=Droid+Serif:400,700,700italic,400italic' 
+//      'http://fonts.googleapis.com/css?family=Droid+Serif:400,700,700italic,400italic'
 // );
 // should we remove all the WordPress junk from the head?
 define( 'clean_head', true );
@@ -33,12 +33,6 @@ define( 'kill_gallery_styles', false );
 
 // Use WordPress Gallery CSS?
 define( 'post_formats', false );
-
-// use php script to minify stylesheet on the server side?
-// DOESN'T MINIFY ANYTING IF ADDITIONAL STYLES ARE USED. Only minifies style.css. See inc/minified.php.
-//Redundant if using Less or SASS/Compass
-define( 'minify_styles', false );
-
 // Is the default excerpt too short? Change "false" to an integer to change the length of the excerpt. The WordPress default is 85 words. If a non-integer, non-boolean value is input, the default is used.
 define( 'custom_excerpt_length', false );
 // if using a custom excerpt, do you want to allow specific HTML tags. WordPress doesn't allow any HTML in the excerpt by default. Accepts a string that looks like '<br>, <p>, <h2>'
@@ -73,7 +67,7 @@ function nightsky_sidebars( ) {
             'before_widget' => '<ul id="%1$s" class="widget %2$s">',
             'after_widget' => '</ul>',
             'before_title' => '<h2 class="widget-title">',
-            'after_title' => '</h2>' 
+            'after_title' => '</h2>'
         ) );
     } //function_exists( 'register_sidebar' )
 } //end sidebars
@@ -81,7 +75,7 @@ function nightsky_sidebars( ) {
 // tell WordPress about custom Nav Menus.
 register_nav_menus( array(
      'header' => __( 'Header Navigation', 'nightsky' ),
-    // 'footer' => __( 'Footer Navigation', 'nightsky' ) 
+    // 'footer' => __( 'Footer Navigation', 'nightsky' )
 ) );
 
 function nightsky_header_menu( ) {
@@ -90,7 +84,7 @@ function nightsky_header_menu( ) {
         'container' => 'div',
         'container_id' => 'nav',
         'container_class' => 'menu header-menu row span12-no-margin',
-        'menu_class' => 'menu header-menu-list' 
+        'menu_class' => 'menu header-menu-list'
     );
     wp_nav_menu( $header );
 }

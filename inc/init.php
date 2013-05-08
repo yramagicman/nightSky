@@ -4,10 +4,10 @@ function nightsky_remove_recent_comments_style( ) {
   global $wp_widget_factory;
   remove_action( 'wp_head', array(
      $wp_widget_factory->widgets[ 'WP_Widget_Recent_Comments' ],
-    'recent_comments_style' 
+    'recent_comments_style'
   ) );
 }
-// Make the title look cool 
+// Make the title look cool
 function nightsky_title( ) {
   if ( is_home() ) {
     bloginfo( 'name' );
@@ -39,19 +39,19 @@ function nightsky_page_menu_args( $args ) {
 
 function nightsky_split_sidebar( ) {
 ?>
-  
+
   <script type="text/javascript">
   // function to add classes to split sidebar for responsive design
-  function splitSidebar()	{
+  function splitSidebar()   {
     var splitPoint = 3;//adjust this number to change the split point
     var tag = document.getElementById('sidebar').getElementsByTagName('ul');
     var num = tag.length;
     for (var i = 0; i < num; i++) {
-      if (i < splitPoint) { 
-        tag[i].className += " sidebar-col-1";		
+      if (i < splitPoint) {
+        tag[i].className += " sidebar-col-1";
       }
       if (i > splitPoint) {
-        tag[i].className += " sidebar-col-2";		
+        tag[i].className += " sidebar-col-2";
       }
     }
   }
@@ -64,7 +64,7 @@ function nightsky_custom_wp_trim_excerpt( $text ) {
   $raw_excerpt = $text;
   $text        = get_the_content( '' );
   $text        = strip_shortcodes( $text );
-  
+
   $text         = apply_filters( 'the_content', $text );
   $text         = str_replace( ']]>', ']]&gt;', $text );
   $allowed_tags = custom_excerpt_tags;
@@ -76,10 +76,10 @@ function nightsky_custom_wp_trim_excerpt( $text ) {
     $excerpt_word_count = 85;
   }
   $excerpt_length = apply_filters( 'excerpt_length', $excerpt_word_count );
-  
+
   $excerpt_end  = '...';
   $excerpt_more = apply_filters( 'excerpt_more', ' ' . $excerpt_end );
-  
+
   $words = preg_split( "/[\n\r\t ]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY );
   if ( count( $words ) > $excerpt_length ) {
     array_pop( $words );
@@ -98,7 +98,7 @@ function nightsky_custom_wp_trim_excerpt( $text ) {
 //     'image',
 //     'video',
 //     'quote',
-//     'link' 
+//     'link'
 //   ) );
 // } //post_formats
 ?>
